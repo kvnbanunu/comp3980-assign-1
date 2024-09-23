@@ -1,1 +1,3 @@
-/home/banunu/work/programming101dev/scripts/supported_c_compilers.txt
+clang
+clang-18
+gcc
