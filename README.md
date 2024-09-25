@@ -1,6 +1,8 @@
-# template-c Repository Guide
+# COMP3980 Assignment 1
 
-Welcome to the `c template` repository. This guide will help you set up and run the provided scripts.
+Program written by Kevin Nguyen.
+
+This program reads an input text file, character by character, applies a filter, and writes the processed character to an output text file.
 
 ## **Table of Contents**
 
@@ -10,20 +12,21 @@ Welcome to the `c template` repository. This guide will help you set up and run 
 4. [Running the `change-compiler.sh` Script](#running-the-change-compilersh-script)
 5. [Running the `build.sh` Script](#running-the-buildsh-script)
 5. [Running the `build-all.sh` Script](#running-the-build-allsh-script)
-6. [Copy the template to start a new project](#copy-the-template-to-start-a-new-project)
+6. [Adding the input file](#adding-the-input-file)
+7. [Running the program](#running-the-program)
 
 ## **Cloning the Repository**
 
 Clone the repository using the following command:
 
 ```bash
-git clone https://github.com/programming101dev/template-c.git
+git clone https://github.com/kvnbanunu/comp3980-assign-1.git
 ```
 
 Navigate to the cloned directory:
 
 ```bash
-cd template-c
+cd comp3980-assign-1
 ```
 
 Ensure the scripts are executable:
@@ -79,22 +82,42 @@ To build the program with all compilers run:
 ./build-all.sh
 ```
 
-## **Copy the template to start a new project**
+## **Adding the input file**
 
-To create a new project from the template, run:
+An input text file is necessary to run this program.
+
+I have included a sample one in the root of this folder.
+
+Move it into the build directory with:
 
 ```bash
-./copy-template.sh <desitnation directory>
+mv input.txt build/
 ```
 
-This will copy all of the files needed to start a new project.
+## **Running the Program **
 
-1. Edit the files.txt
-2. run ./generate-cmakelists.sh
-3. run ./change-compiler.sh -c <compiler>
-4. run ./build.sh
+To run the program...
+Navigate into the build directory
 
-The files.txt file contains:
-<executable> <source files> <header files> <libraries>
+```bash
+cd build/
+```
 
-When you need to add/removes files to/from the project you must rerun the 4 steps above. 
+Ensure you have proper permissions:
+
+```bash
+chmod +x comp3980-assign-1
+```
+
+Execute the program with the following arguments:
+"-i" <input text file>
+"-o" <output text file> (optional)
+    - defaults to output.txt
+"-f" <filter>
+    - upper
+    - lower
+    - null
+
+```bash
+./comp3980-assign-1 -i input.txt -o output.txt -f upper
+```
