@@ -94,7 +94,7 @@ Move it into the build directory with:
 mv input.txt build/
 ```
 
-## **Running the Program **
+## **Running the Program**
 
 To run the program...
 Navigate into the build directory
@@ -110,13 +110,20 @@ chmod +x comp3980-assign-1
 ```
 
 Execute the program with the following arguments:
-"-i" <input text file>
-"-o" <output text file> (optional)
-    - defaults to output.txt
-"-f" <filter>
-    - upper
-    - lower
-    - null
+
+"-i" [input text file]
+
+"-o" [output text file] (optional)
+
+    defaults to output.txt
+    
+"-f" [filter]
+
+    upper
+    
+    lower
+    
+    null
 
 ```bash
 ./comp3980-assign-1 -i input.txt -o output.txt -f upper
