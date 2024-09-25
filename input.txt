@@ -1,0 +1,6 @@
+Hello, World!
+This is a Test File.
+1234567890
+Mixed CaSe StrIng.
+SYMBOLS: @#%^&*()
+
