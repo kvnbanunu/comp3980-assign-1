@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
                 }
                 break;
             default:
-                fprintf(stderr, "Usage: %s [-i input_file] [-o output_file] [-f filter]\n", argv[0]);
+                fprintf(stderr, "Usage: %s \n[-i input_file]\n[-o output_file] (optional)\n[-f filter (upper | lower | null)] (optional)\n", argv[0]);
                 exit(EXIT_FAILURE);
         }
     }
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     if(optind < argc)
     {
         fprintf(stderr, "Error: Unexpected arguments\n");
-        fprintf(stderr, "Usage: %s [-i input_file] [-o output_file] [-f filter]\n", argv[0]);
+        fprintf(stderr, "Usage: %s \n[-i input_file]\n[-o output_file] (optional)\n[-f filter (upper | lower | null)] (optional)\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     if(input_file == NULL)
     {
         fprintf(stderr, "Error: input file is required\n");
-        fprintf(stderr, "Usage: %s [-i input_file] [-o output_file] [-f filter]\n", argv[0]);
+        fprintf(stderr, "Usage: %s \n[-i input_file]\n[-o output_file] (optional)\n[-f filter (upper | lower | null)] (optional)\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
     // Check for null flag and create output file.
-    fdout = (output_file == NULL) ? open(OUTPUT_DEFAULT, O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, S_IWUSR) : open(output_file, O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, S_IWUSR);
+    fdout = (output_file == NULL) ? open(OUTPUT_DEFAULT, O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, S_IRWXU) : open(output_file, O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, S_IRWXU);
     if(fdout == -1)
     {
         perror("open");
